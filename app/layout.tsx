@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import PrelineScript from "@/components/PrelineScript";
 import Navbar from "@/components/Navbar";
+import { AuthProvider } from "@/utils/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}</body>
+        <AuthProvider>
+          <Navbar />
+          {children}
+        </AuthProvider>
+      </body>
       <PrelineScript />
     </html>
   );
