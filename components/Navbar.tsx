@@ -27,8 +27,8 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="fixed w-full border-b-1 border-black-200">
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800 ">
+    <div className="w-full border-b-1 border-black-200">
+      <header className="sticky flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800 ">
         <nav
           className="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
           aria-label="Global"
@@ -37,7 +37,7 @@ const Navbar = () => {
             className="sm:order-1 flex-none text-xl font-semibold dark:text-white"
             href="/"
           >
-            NQ???
+            N???
           </a>
           <div className="sm:order-3 flex items-center gap-x-2">
             {user?.user ? (
