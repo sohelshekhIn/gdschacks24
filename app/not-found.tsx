@@ -10,7 +10,7 @@ const NotFoundPage = () => {
             href="#"
             aria-label="Brand"
           >
-            Brand
+            Nice Question?
           </a>
         </nav>
       </header>
