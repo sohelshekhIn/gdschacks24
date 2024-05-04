@@ -37,7 +37,7 @@ const Navbar = () => {
             className="sm:order-1 flex-none text-xl font-semibold dark:text-white"
             href="#"
           >
-            Brand
+            NQ???
           </a>
           <div className="sm:order-3 flex items-center gap-x-2">
             {user?.user ? (
