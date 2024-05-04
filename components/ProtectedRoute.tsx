@@ -11,8 +11,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const router = useRouter();
 
   if (!user?.user) {
-    // Redirect to login if not authenticated
-    router.push("/");
+    router.push("/login");
     return null;
   }
 
