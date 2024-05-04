@@ -19,7 +19,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const unsubscribe = auth.onAuthStateChanged((userData: User | null) => {
       if (userData) {
         setUser(userData);
-        router.push("/");
       } else {
         setUser(null);
       }
