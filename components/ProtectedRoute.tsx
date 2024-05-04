@@ -9,10 +9,12 @@ interface ProtectedRouteProps {
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const user = useAuth();
   const router = useRouter();
+  console.log(user?.user);
+  console.log("Helo");
 
+  console.log(user?.user);
   if (!user?.user) {
-    // Redirect to login if not authenticated
-    router.push("/");
+    router.push("/login");
     return null;
   }
 

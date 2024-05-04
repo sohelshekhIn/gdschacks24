@@ -17,7 +17,7 @@ const AddCourse = () => {
           <p className="text-center m-10">OR</p>
           <form className="border-2 border-black-600 p-14">
             <label className="block">
-              <span className="sr-only">Choose profile photo</span>
+              <span className="sr-only">Upload course material</span>
               <input
                 type="file"
                 className="block w-full text-sm text-gray-500
