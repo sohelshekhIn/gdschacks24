@@ -142,11 +142,18 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5">
               <Link
-                className="font-medium text-blue-500"
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
                 href="/learn"
                 aria-current="page"
               >
                 Learn
+              </Link>
+              <Link
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+                href="/add-course"
+                aria-current="page"
+              >
+                Add Course
               </Link>
               <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
