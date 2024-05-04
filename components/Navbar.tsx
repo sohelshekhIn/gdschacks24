@@ -37,7 +37,7 @@ const Navbar = () => {
             className="sm:order-1 flex-none text-xl font-semibold dark:text-white"
             href="/"
           >
-            Brand
+            NQ???
           </a>
           <div className="sm:order-3 flex items-center gap-x-2">
             {user?.user ? (
@@ -96,7 +96,6 @@ const Navbar = () => {
                 </button>
               </>
             )}
-
             <button
               type="button"
               className="sm:hidden hs-collapse-toggle p-2.5 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10"
@@ -112,7 +111,7 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                stroke-width="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
@@ -128,7 +127,7 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                stroke-width="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
