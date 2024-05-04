@@ -2,7 +2,7 @@
 
 import { useAuth } from "@/utils/AuthContext";
 import { auth } from "@/utils/firebase";
-import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -27,8 +27,8 @@ const Navbar = () => {
     }
   };
   return (
-    <div>
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800">
+    <div className="fixed w-full border-b-1 border-black-200">
+      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800 ">
         <nav
           className="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
           aria-label="Global"
