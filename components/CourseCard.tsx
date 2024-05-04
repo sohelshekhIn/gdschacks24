@@ -1,6 +1,17 @@
-import Image from "next/image"
+"use client"
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const CourseCard = () => {
+
+    const [addCourse, setAddCourse] = useState();
+
+    const add = () => {
+
+    }
+
     return (
         <div>
             <div className="flex gap-5 w-[300px] mx-auto">
