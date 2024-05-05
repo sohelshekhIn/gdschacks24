@@ -27,8 +27,8 @@ const Navbar = () => {
     }
   };
   return (
-    <div>
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800">
+    <div className="w-full border-b-1 border-black-200">
+      <header className="sticky flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800 ">
         <nav
           className="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
           aria-label="Global"
@@ -37,7 +37,7 @@ const Navbar = () => {
             className="sm:order-1 flex-none text-xl font-semibold dark:text-white"
             href="/"
           >
-            NQ???
+            N???
           </a>
           <div className="sm:order-3 flex items-center gap-x-2">
             {user?.user ? (
@@ -142,11 +142,18 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5">
               <Link
-                className="font-medium text-blue-500"
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
                 href="/learn"
                 aria-current="page"
               >
                 Learn
+              </Link>
+              <Link
+                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+                href="/add-course"
+                aria-current="page"
+              >
+                Add Course
               </Link>
               <Link
                 className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
