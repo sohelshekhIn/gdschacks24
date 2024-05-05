@@ -4,7 +4,7 @@ const CourseCard = () => {
 
     return (
         <div>
-            <div className="flex hover:scale-105 hover:drop-shadow-xl gap-5 w-[300px] mx-auto my-5">
+            <div className="flex hover:scale-105 hover:drop-shadow-xl gap-5 w-[300px] mx-auto my-5 pt-20">
                 <a className="flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70" href="#">
                 <Image 
                 width={300}
