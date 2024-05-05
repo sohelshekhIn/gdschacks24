@@ -16,8 +16,16 @@
   }
 }
 
+*{
+  transition: all 300ms ease-in-out;
+}
+
 body {
   @apply bg-blue-500/40;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
 }
 
 @layer utilities {

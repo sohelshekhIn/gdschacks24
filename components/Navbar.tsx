@@ -3,7 +3,6 @@ import { useAuth } from "@/utils/AuthContext";
 import { auth } from "@/utils/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
-import Link from "next/link";
 
 const Navbar = () => {
   const user = useAuth();
