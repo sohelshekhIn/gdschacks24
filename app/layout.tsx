@@ -1,9 +1,10 @@
+import Navbar from "@/components/Navbar";
+import PrelineScript from "@/components/PrelineScript";
+import { AuthProvider } from "@/utils/AuthContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import PrelineScript from "@/components/PrelineScript";
-import Navbar from "@/components/Navbar";
-import { AuthProvider } from "@/utils/AuthContext";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <AuthProvider>
           <Navbar />
           {children}
+          <Footer />
         </AuthProvider>
       </body>
       <PrelineScript />
