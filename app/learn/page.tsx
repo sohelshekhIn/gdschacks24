@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LearnPage = () => {
     return (
-        <div className="w-full px-32 grid grid-cols-3 gap-14 py-16 items-center">
+        <div className="w-full px-32 grid grid-cols-3 gap-14 py-16 items-center bg-x">
             <CourseCard/>
             <CourseCard/>
             <CourseCard/>
