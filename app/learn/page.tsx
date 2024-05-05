@@ -2,13 +2,25 @@
 
 import CourseCard from "@/components/CourseCard";
 import ProtectedRoute from "@/components/ProtectedRoute";
-import Image from "next/image";
 
 const LearnPage = () => {
   return (
     <ProtectedRoute>
-      <div className="w-full px-32 grid grid-cols-3 gap-14 py-16 items-center">
-        <CourseCard />
+      <div className="min-h-[90vh] bg-sky-100">
+        <h2 className="text-center text-[27px] font-bold text-black-300/50 pt-5">
+          My Courses
+        </h2>
+        <div className="grid grid-cols-4 p-7 pt-10">
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+        </div>
       </div>
     </ProtectedRoute>
   );

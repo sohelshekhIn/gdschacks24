@@ -27,8 +27,8 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="w-full border-b-1 border-black-200">
-      <header className="sticky flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800 ">
+    <div className="w-full shadow-md fixed top-0">
+      <header className=" flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800 ">
         <nav
           className="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
           aria-label="Global"
