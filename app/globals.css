@@ -16,8 +16,16 @@
   }
 }
 
+*{
+  transition: all 300ms ease-in-out;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
+}
+
+::-webkit-scrollbar{
+  width: 0px;
 }
 
 @layer utilities {
