@@ -54,17 +54,23 @@ export async function POST(request: Request) {
   console.log(data);
 
   if (data) {
+    // get unique number from timestamp
+    const timestamp = new Date().getTime();
+    console.log(timestamp);
+
     const course_plan = await getCoursePlan(data);
+    console.log(course_plan.text);
 
     // simaltaneously get course content for each module and add to firestore
-    const saveCoursePlan = await setDoc(doc(db, "courses", data.uid), {
-      course_plan: course_plan.text,
-    });
-    const contentResults: string[] = [];
-    for (let i = 1; i <= 2; i++) {
-      const ccontent = await getCourseContent(i, course_plan);
-      contentResults.push(ccontent);
-    }
+
+    // const saveCoursePlan = await setDoc(doc(db, `courses`, [timestamp]), {
+    //   course_plan: course_plan.text,
+    // });
+    // const contentResults: string[] = [];
+    // for (let i = 1; i <= 2; i++) {
+    //   const ccontent = await getCourseContent(i, course_plan);
+    //   contentResults.push(ccontent);
+    // }
 
     console.log(chat_history);
     console.log(contentResults);
