@@ -161,12 +161,7 @@ const Navbar = () => {
               >
                 My Notes
               </Link>
-              <Link
-                className="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-                href="/add-course"
-              >
-                Add Course
-              </Link>
+              
             </div>
           </div>
         </nav>
