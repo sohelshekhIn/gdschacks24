@@ -14,7 +14,6 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
     router.push("/login");
     return null;
   }
-
   return children;
 };
 
