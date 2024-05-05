@@ -1,8 +1,32 @@
 "use client";
 
 import ProtectedRoute from "@/components/ProtectedRoute";
+import { useAuth } from "@/utils/AuthContext";
+import { useState } from "react";
 
 const AddCourse = () => {
+  const [inputCourse, setInputCourse] = useState("");
+  const user = useAuth();
+
+  const handleInputCourseGeneration = async () => {
+    const data = {
+      topic: inputCourse,
+      uid: user?.user?.uid,
+    };
+    const response = await fetch("/api/cohere/question", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      console.log("Success");
+    } else {
+      console.log("Error");
+    }
+  };
   return (
     <ProtectedRoute>
       <div className="h-[90vh]">
@@ -11,11 +35,14 @@ const AddCourse = () => {
             <textarea
               className="py-3 px-4 block w-[50vw] bg-gray-100 border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               rows={9}
+              value={inputCourse}
+              onChange={(e) => setInputCourse(e.target.value)}
               placeholder="
                 Describe the topic or question you want to learn about.
                           "
             ></textarea>
             <button
+              onClick={handleInputCourseGeneration}
               className="
                             w-fit py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-blue-500 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800
                           "

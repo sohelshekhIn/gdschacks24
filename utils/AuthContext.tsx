@@ -1,9 +1,9 @@
 "use client";
 
 import type { User } from "firebase/auth";
+import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "./firebase";
-import { useRouter } from "next/navigation";
 
 interface AuthContextValue {
   user: User | null;
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const unsubscribe = auth.onAuthStateChanged((userData: User | null) => {
       if (userData) {
         setUser(userData);
-        router.push("/learn");
+        router.push("/");
       } else {
         setUser(null);
       }
