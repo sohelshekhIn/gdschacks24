@@ -4,6 +4,7 @@ import { auth } from "@/utils/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const user = useAuth();
@@ -26,6 +27,51 @@ const Navbar = () => {
       console.log(error.message);
     }
   };
+
+  const [mode, setMode] = useState("light");
+
+  const changeMode = () => {
+    if(mode == 'light'){
+      setMode('dark');
+      console.log("It is dark");
+    }
+    else {
+      setMode('dark')
+      console.log("It is light");
+    }
+  };
+
+  const handleDark = () => {
+    console.log("hi");
+    
+    const html = window.document.querySelector("html")
+    console.log(html?.classList)
+    if (html?.classList.contains("light")) {
+      console.log("Its light");
+      
+      html?.classList.remove("light")
+      html?.classList.add("dark")
+  } else if (html?.classList.contains("dark")){
+    console.log("its dark")
+    html?.classList.remove("dark")
+    html?.classList.add("light")
+  }
+}
+
+useEffect(() => {
+  // This code should be added to <head>.
+// It's used to prevent page load glitches.
+const html = document.querySelector('html');
+const isLightOrAuto = localStorage.getItem('hs_theme') === 'light' || (localStorage.getItem('hs_theme') === 'auto' && !window.matchMedia('(prefers-color-scheme: dark)').matches);
+const isDarkOrAuto = localStorage.getItem('hs_theme') === 'dark' || (localStorage.getItem('hs_theme') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+if (isLightOrAuto && html?.classList.contains('dark')) html?.classList.remove('dark');
+else if (isDarkOrAuto && html?.classList.contains('light')) html?.classList.remove('light');
+else if (isDarkOrAuto && !html?.classList.contains('dark')) html?.classList.add('dark');
+else if (isLightOrAuto && !html?.classList.contains('light')) html?.classList.add('light');
+})
+
+
   return (
     <div className="w-full shadow-md fixed top-0">
       <header className=" flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800 ">
@@ -42,10 +88,14 @@ const Navbar = () => {
           <div className="sm:order-3 flex items-center gap-x-2">
             {user?.user ? (
               <>
+                {user.user.displayName?
+                <p>{user.user.displayName}</p>
+                : ""  
+                }
                 <Image
                   width={300}
                   height={300}
-                  className="inline-block size-[38px] rounded-full"
+                  className="inline-block size-[38px] rounded-full mr-5"
                   src={
                     user.user.photoURL ||
                     "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
@@ -96,45 +146,6 @@ const Navbar = () => {
                 </button>
               </>
             )}
-            <button
-              type="button"
-              className="sm:hidden hs-collapse-toggle p-2.5 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10"
-              data-hs-collapse="#navbar-alignment"
-              aria-controls="navbar-alignment"
-              aria-label="Toggle navigation"
-            >
-              <svg
-                className="hs-collapse-open:hidden flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="3" x2="21" y1="6" y2="6" />
-                <line x1="3" x2="21" y1="12" y2="12" />
-                <line x1="3" x2="21" y1="18" y2="18" />
-              </svg>
-              <svg
-                className="hs-collapse-open:block hidden flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
           </div>
           <div
             id="navbar-alignment"
